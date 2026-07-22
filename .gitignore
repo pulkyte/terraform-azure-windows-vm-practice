@@ -8,6 +8,8 @@ override.tf.json
 terraform.rc
 terraform.tfvars
 *.auto.tfvars
+*.tfvars
+*.lock.hcl
 
 # Plan files
 *.tfplan
