@@ -1,0 +1,23 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+terraform.rc
+terraform.tfvars
+*.auto.tfvars
+
+# Plan files
+*.tfplan
+
+# Sensitive
+*.pem
+*.key
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
