@@ -1,0 +1,11 @@
+subscription_id    = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+
+resource_group_name = "rg-demo"
+
+location = "Central India"
+
+vm_name = "vm-demo"
+
+admin_username = "azureadmin"
+
+admin_password = "ChangeMe!"
