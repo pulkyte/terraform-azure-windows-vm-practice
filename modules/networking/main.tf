@@ -12,7 +12,8 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes = ["10.0.0.0/24"]
 }
 resource "azurerm_public_ip" "pip" {
-  name                = "${var.vm_name}-pip"
+  count = var.vm_count
+  name = format("%s-pip-%02d",var.vm_name,count.index+1)
   location            = var.location
   resource_group_name = var.resource_group_name
 
@@ -39,7 +40,8 @@ resource "azurerm_network_security_group" "nsg" {
   }
 }
 resource "azurerm_network_interface" "nic" {
-  name                = "${var.vm_name}-nic"
+  count = var.vm_count
+  name = format("%s-nic-%02d",var.vm_name,count.index+1)
   location            = var.location
   resource_group_name = var.resource_group_name
 
@@ -50,7 +52,7 @@ resource "azurerm_network_interface" "nic" {
 
     private_ip_address_allocation = "Dynamic"
 
-    public_ip_address_id          = azurerm_public_ip.pip.id
+    public_ip_address_id          = azurerm_public_ip.pip[count.index].id
   }
 }
 resource "azurerm_subnet_network_security_group_association" "nsg_assoc" {
