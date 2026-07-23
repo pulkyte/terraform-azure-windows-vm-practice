@@ -1,7 +1,7 @@
 # terraform-azure-windows-vm-practice
 # Terraform Azure Windows VM
 
-Deploy a production-ready Windows Server virtual machine on Microsoft Azure using Terraform.
+Deploy a production-ready Windows Server virtual machine on Microsoft Azure using Terraform. Supports multiple VM creation.
 
 ## Architecture
 
